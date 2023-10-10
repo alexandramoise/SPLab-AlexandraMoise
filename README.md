@@ -1,2 +1,2 @@
 # SPLab-AlexandraMoise
-Repository for Desing Patterns laboratory
+Repository for Design Patterns laboratory

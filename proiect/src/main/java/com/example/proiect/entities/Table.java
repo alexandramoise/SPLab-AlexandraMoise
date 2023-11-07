@@ -2,7 +2,6 @@ package com.example.proiect.entities;
 
 public class Table implements Element {
     private String title;
-    private Subchapter subchapter;
 
     public Table(String title) {
         this.title = title;
@@ -15,5 +14,19 @@ public class Table implements Element {
 
     public void print() {
         System.out.println(this);
+    }
+
+    @Override
+    public void add(Element e) {
+    }
+
+    @Override
+    public void remove(Element e) {
+
+    }
+
+    @Override
+    public Element get(int index) {
+        return null;
     }
 }

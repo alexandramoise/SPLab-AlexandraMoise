@@ -3,7 +3,6 @@ package com.example.proiect.entities;
 
 public class Author {
     private String name;
-    private Book book;
 
     public Author(String name) {
         this.name = name;

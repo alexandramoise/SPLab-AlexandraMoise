@@ -9,26 +9,26 @@ public class ProiectApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ProiectApplication.class, args);
-        System.out.println("Hello world!");
 
-        Book b = new Book("Titlul unei carti faine!");
-        Author a = new Author("Ionescu Andreea");
+        Book noapteBuna = new Book("Noapte buna, copii!");
+        Author rpGheo = new Author("Radu Pavel Gheo");
+        noapteBuna.addAuthor(rpGheo);
 
-        b.addAuthor(a);
+        Section cap1 = new Section("Capitolul 1");
+        Section cap11 = new Section("Capitolul 1.1");
+        Section cap111 = new Section("Capitolul 1.1.1");
+        Section cap1111 = new Section("Capitolul 1.1.1.1");
 
-        int indexCap1 = b.createChapter("Capitolul 1");
-        Chapter c1 = b.getChapter(indexCap1);
-        int indexSubcap1 = c1.createSubchapter("Subcapitolul 1.1");
-        Subchapter sc1 = c1.getSubchapter(indexSubcap1);
+        noapteBuna.addContent(new Paragraph("Multumesc celor care ..."));
+        noapteBuna.addContent(cap1);
+        cap1.add(new Paragraph("Moto capitol"));
+        cap1.add(cap11);
+        cap11.add(new Paragraph("Text from subchapter 1.1"));
+        cap11.add(cap111);
+        cap111.add(new Paragraph("Text from subchapter 1.1.1"));
+        cap111.add(cap1111);
+        cap1111.add(new Image("Image from subchapter 1.1.1.1"));
 
-        sc1.createNewParagraph("Paragraf 1");
-        sc1.createNewParagraph("Paragraf 2");
-        sc1.createNewImage("Imagine 1");
-        sc1.createNewParagraph("Paragraf 3");
-        sc1.createNewTable("Tabel 1");
-
-        sc1.print();
-
+        noapteBuna.print();
     }
-
 }

@@ -1,10 +1,18 @@
 package com.example.proiect.entities;
 
+import static java.lang.Thread.sleep;
+
 public class Image implements Element {
     private String url;
 
     public Image(String url) {
         this.url = url;
+        try {
+            // n a vrut cu TimeUnit.SECONDS.sleep(5)
+            sleep(5000);
+        } catch(InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

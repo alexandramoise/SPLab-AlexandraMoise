@@ -19,7 +19,19 @@ public class ProiectApplication {
           cap1.add(p3);
           Paragraph p4 = new Paragraph("Paragraf 4");
           cap1.add(p4);
+          Image img = new Image("Imagine 1");
+          cap1.add(img);
+          Image img2 = new Image("Imagine 2");
+          cap1.add(img2);
 
+        RenderContentVisitor rcv = new RenderContentVisitor();
+        cap1.accept(rcv);
+
+        BookStatistics bs = new BookStatistics();
+        cap1.accept(bs);
+        bs.printStatistics();
+
+          /*
           System.out.println(" ===== Printing WITHOUT alignment: " );
           cap1.print();
 
@@ -27,8 +39,10 @@ public class ProiectApplication {
           p2.setAlignStrategy(new AlignRight());
           p3.setAlignStrategy(new AlignLeft());
 
-         System.out.println(" ===== Printing WITH alignment: (hopefully)");
-         cap1.print();
+         System.out.println(" ===== Printing WITH alignment: ");
+         */
+
+
 //        Book noapteBuna = new Book("Noapte buna, copii!");
 //        Author rpGheo = new Author("Radu Pavel Gheo");
 //        noapteBuna.addAuthor(rpGheo);

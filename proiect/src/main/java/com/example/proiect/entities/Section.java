@@ -15,9 +15,11 @@ public class Section implements Element {
     @Override
     public void print() {
         System.out.println(title);
+        /*
         for(Element e : elements) {
             e.print();
         }
+        */
     }
 
     @Override
@@ -35,5 +37,13 @@ public class Section implements Element {
         if(index >= 0 && index < elements.size()) {
             return elements.get(index);
         } else throw new IndexOutOfBoundsException();
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitSection(this);
+        for(Element e : elements) {
+            e.accept(v);
+        }
     }
 }
